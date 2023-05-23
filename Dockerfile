@@ -17,7 +17,7 @@ COPY prebuildfs /
 RUN install_packages acl ca-certificates curl gzip libc6 libssl1.1 procps tar
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "redis-sentinel" "7.0.0-0" --checksum 1401d10465c670cabca02add71f8bbf71e3080718791fd981160d740138672fd
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.14.0-0" --checksum da4a2f759ccc57c100d795b71ab297f48b31c4dd7578d773d963bbd49c42bd7b
-RUN apt-get update && apt-get upgrade -y && \
+RUN apt-get update && apt-get upgrade -y &&  apt-get -q install -y libgomp1 && \
     rm -r /var/lib/apt/lists /var/cache/apt/archives
 RUN chmod g+rwX /opt/bitnami
 
