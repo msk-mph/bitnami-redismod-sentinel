@@ -2,11 +2,11 @@ version: '2'
 
 services:
   redis-sentinel:
-    image: anyili/bitnami-redismod-sentinel:latest
+    image: anyili/bitnami-redismod-sentinel:20230523
     volumes:
       - redis-sentinel_data:/bitnami
   redis:
-    image: anyili/bitnami-redismod:latest
+    image: anyili/bitnami-redismod:20230523
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
